@@ -1,5 +1,6 @@
 package com.aizaz.samples.dto;
 
+import javax.validation.Valid;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
@@ -21,6 +22,10 @@ public class User {
     @Max(120)
     private int age;
 
+    // @Valid annotation is not required for builderPattern validation example
+    // Its only used here to show that bean validation is not triggered when
+    // the instanced is managed by JVM instead of container.
+    @Valid
     public User(String firstName, String lastName, String gender, int age) {
         this.firstName = firstName;
         this.lastName = lastName;
